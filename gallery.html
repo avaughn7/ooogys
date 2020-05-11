@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <style>
+        .galleria {
+            width: 1000px;
+            height: 1000px;
+            background: #000
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        body::after {
+            content: "";
+            background-image: url(https://lh3.googleusercontent.com/rW0kp0rAPBHrIdPsQd1mDS8C3utzq4V0DPUih_ISzz4K9UdtSAS9q-xc36H_RlETFyirciZfNKcc5FhDlMqvmEc);
+            opacity: 0.1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .centered {
+            margin: 0 auto;
+            text-align: left;
+            width: 1000px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria-inline.twelve.min.css" />
+</head>
+
+<body>
+    <div class="centered" id="ooogys"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/galleria.json",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    Galleria.configure({
+                        thumbnails: 'numbers',
+                        preload: 4,
+                        showCounter: true,
+                        showInfo: true
+                    });
+                    // Galleria.ready(function (options) {
+                    //     this.lazyLoad([0, 4630], function () {
+                    //         Galleria.log('Thumbnails 0 and 1 are loaded');
+                    //     });
+                    //     this.lazyLoadChunks( 10 );
+                    // });
+                    Galleria.run('#ooogys', {
+                        responsive: true,
+                        height: 0.5,
+                        dataSource: data,
+                        maxVideoSize: 1300,
+                        imageCrop: false
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
