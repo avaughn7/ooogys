@@ -1,78 +1,88 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
-    <style>
-        .galleria {
-            width: 1000px;
-            height: 1000px;
-            background: #000
-        }
-    </style>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
 
-        body::after {
-            content: "";
-            background-image: url(https://lh3.googleusercontent.com/rW0kp0rAPBHrIdPsQd1mDS8C3utzq4V0DPUih_ISzz4K9UdtSAS9q-xc36H_RlETFyirciZfNKcc5FhDlMqvmEc);
-            opacity: 0.1;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            z-index: -1;
-        }
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Ooogy Gallery</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-        .centered {
-            margin: 0 auto;
-            text-align: left;
-            width: 1000px;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria-inline.twelve.min.css" />
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/ooogy.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+
 </head>
 
 <body>
-    <div class="centered" id="ooogys"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
-    <script>
-        $(function () {
-            $.ajax({
-                url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/galleria.json",
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    Galleria.configure({
-                        thumbnails: 'numbers',
-                        preload: 4,
-                        showCounter: true,
-                        showInfo: true
-                    });
-                    // Galleria.ready(function (options) {
-                    //     this.lazyLoad([0, 4630], function () {
-                    //         Galleria.log('Thumbnails 0 and 1 are loaded');
-                    //     });
-                    //     this.lazyLoadChunks( 10 );
-                    // });
-                    Galleria.run('#ooogys', {
-                        responsive: true,
-                        height: 0.5,
-                        dataSource: data,
-                        maxVideoSize: 1300,
-                        imageCrop: false
-                    });
-                }
-            });
-        });
-    </script>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 10%">
+        <h4>Ooogy Gallery</h4>
+
+      </div>
+      <div id='ooogys'></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
+  <script>
+    $(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/data/galleria.json",
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          Galleria.configure({
+            thumbnails: 'numbers',
+            preload: 4,
+            showCounter: true,
+            showInfo: true
+          });
+          Galleria.run('#ooogys', {
+            autoplay: true,
+            responsive: true,
+            height: 0.5,
+            dataSource: data,
+            maxVideoSize: 1300,
+            imageCrop: false
+          });
+        }
+      });
+    });
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
 </html>

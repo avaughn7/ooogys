@@ -1,0 +1,11 @@
+body::after {
+    content: "";
+    background-image: url(https://lh3.googleusercontent.com/rW0kp0rAPBHrIdPsQd1mDS8C3utzq4V0DPUih_ISzz4K9UdtSAS9q-xc36H_RlETFyirciZfNKcc5FhDlMqvmEc);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
