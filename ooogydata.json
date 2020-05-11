@@ -1,0 +1,144 @@
+[
+    {
+        "properties": {
+            "version": {
+                "value": 0,
+                "visible": false
+            },
+            "level": {
+                "value": 1,
+                "name": "Level",
+                "display_value": "1"
+            },
+            "gen": {
+                "value": 0,
+                "name": "Generation",
+                "display_value": "0"
+            },
+            "bloodlines": {
+                "value": 3,
+                "name": "Royal Bloodlines",
+                "display_value": "Coco Rok, Hoko Pok"
+            },
+            "skin": {
+                "type": 2,
+                "traits": 2,
+                "variation": 2,
+                "pattern": -1,
+                "visible": false
+            },
+            "eyes": {
+                "rightEye": 2,
+                "leftEye": 2,
+                "visible": false
+            },
+            "accessories": {
+                "value": [
+                    {
+                        "name": "Horn_Devil",
+                        "variation": 0
+                    },
+                    {
+                        "name": "Teeth_Fangs",
+                        "variation": 0
+                    }
+                ],
+                "visible": false
+            },
+            "pose_index": {
+                "value": 8,
+                "visible": false
+            },
+            "luck": {
+                "value": 21,
+                "name": "Luck",
+                "display_value": "21 (20+1)"
+            },
+            "immune": {
+                "value": 19,
+                "name": "Immune System",
+                "display_value": "19 (18+1)"
+            },
+            "anger": {
+                "value": 24,
+                "name": "Anger Issues",
+                "display_value": "24"
+            }
+        },
+        "name": "Ooogy",
+        "description": "Rare Ooogy\nLuck 21 (20+1), Immune System 19 (18+1), Anger Issues 24\n\nNo one knows just how old this ancient creature really is. Rumors and fairy tales say Ooogies were pets to the ancient Atlanteans while others say they were wise companions preparing them for battle with the highest quality crafted armor and weapons in return for endless supplies of fresh fish. Start feeding your Ooogy today and he might steal your heart away\u2026",
+        "image": "https://9la.ams3.digitaloceanspaces.com/icons/ooogy/id/108000000000078c000000000000000000000000000000000000000000000001.png",
+        "title": "Ooogy #1"
+    },
+    {
+        "properties": {
+            "version": {
+                "value": 0,
+                "visible": false
+            },
+            "level": {
+                "value": 1,
+                "name": "Level",
+                "display_value": "1"
+            },
+            "gen": {
+                "value": 0,
+                "name": "Generation",
+                "display_value": "0"
+            },
+            "bloodlines": {
+                "value": 16,
+                "name": "Royal Bloodlines",
+                "display_value": "Messi Mas"
+            },
+            "skin": {
+                "type": 0,
+                "traits": 0,
+                "variation": 6,
+                "pattern": 12,
+                "visible": false
+            },
+            "eyes": {
+                "rightEye": 6,
+                "leftEye": 6,
+                "visible": false
+            },
+            "accessories": {
+                "value": [
+                    {
+                        "name": "Hair_MohawkGreen",
+                        "variation": 0
+                    },
+                    {
+                        "name": "Teeth_FangLeft",
+                        "variation": 0
+                    }
+                ],
+                "visible": false
+            },
+            "pose_index": {
+                "value": 2,
+                "visible": false
+            },
+            "luck": {
+                "value": 15,
+                "name": "Luck",
+                "display_value": "15"
+            },
+            "immune": {
+                "value": 21,
+                "name": "Immune System",
+                "display_value": "21 (20+1)"
+            },
+            "anger": {
+                "value": 21,
+                "name": "Anger Issues",
+                "display_value": "21"
+            }
+        },
+        "name": "Ooogy",
+        "description": "Rare Ooogy\nLuck 15, Immune System 21 (20+1), Anger Issues 21\n\nNo one knows just how old this ancient creature really is. Rumors and fairy tales say Ooogies were pets to the ancient Atlanteans while others say they were wise companions preparing them for battle with the highest quality crafted armor and weapons in return for endless supplies of fresh fish. Start feeding your Ooogy today and he might steal your heart away\u2026",
+        "image": "https://9la.ams3.digitaloceanspaces.com/icons/ooogy/id/108000000000078c000000000000000000000000000000000000000000000002.png",
+        "title": "Ooogy #2"
+    }
+]
