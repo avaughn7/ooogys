@@ -48,18 +48,20 @@
   <div class="container">
     <div class="row">
       <div class="one-half column" style="margin-top: 10%">
-        <h4>Ooogy Gallery</h4>
-
+        <h4>Ooogy Gallery</h4>        
       </div>
-      <div id='ooogys'></div>
     </div>
+  </div>
+
+  <div class="container">
+    <div id='ooogys'></div>    
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
   <script>
     $(function () {
       $.ajax({
-        url: "./data/galleria.json",
+        url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/data/galleria.json",
         type: 'GET',
         dataType: 'json',
         success: function (data) {
