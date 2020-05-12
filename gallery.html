@@ -51,6 +51,14 @@
         <h4>Ooogy Gallery</h4>
       </div>
     </div>
+    <div class="row" style="text-align: center">
+      <div class="four.columns container">
+        <h6>
+          <a href="#" class="previous">&laquo; Previous</a>
+          <a href="#" class="next">Next &raquo;</a>
+        </h6>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -59,9 +67,30 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
   <script>
+    let searchParams = new URLSearchParams(window.location.search)
+    let ooogyset = searchParams.get('ooogyset')
+
+    $('.next').click(function(){ 
+      var currentUrl = window.location.pathname;
+      var newOoogyset = parseInt(ooogyset) + 1
+      var nextUrl = currentUrl + "?ooogyset="+ newOoogyset
+      console.log(nextUrl);
+      window.location = nextUrl
+    
+    });
+
+    $('.previous').click(function(){ 
+      var currentUrl = window.location.pathname;
+      var newOoogyset = parseInt(ooogyset) - 1
+      var nextUrl = currentUrl + "?ooogyset="+ newOoogyset
+      console.log(nextUrl);
+      window.location = nextUrl
+    
+    });
+
     $(function () {
       $.ajax({
-        url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/data/galleria.json",
+        url: "https://raw.githubusercontent.com/avaughn7/ooogys/master/data/galleria" + ooogyset + ".json",
         type: 'GET',
         dataType: 'json',
         success: function (data) {
