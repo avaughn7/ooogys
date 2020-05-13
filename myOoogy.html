@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Ooogy Gallery</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/ooogy.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 1%">
+        <!-- <h4>Ooogy Gallery</h4> -->
+      </div>
+    </div>
+    <div class="row" style="text-align: center">
+      <div class="four.columns container">        
+        <label for="ooogyinput">Ooogy #
+        <input id="ooogyinput" type="text" value="3700" placeholder="3700"></label>
+        <a id="enjinxhref" href="https://enjinx.io/eth/asset/108000000000078c000000000000000000000000000000000000000000000e74" target='_blank'>enjinx link</a>
+        <h6>
+          <a href="#" class="previous">&laquo; Previous</a>
+          <a href="#" class="next">Next &raquo;</a>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id='ooogys' style="text-align: center">
+      <a href="https://9la.ams3.digitaloceanspaces.com/icons/ooogy/id/108000000000078c000000000000000000000000000000000000000000000e74.png" target='_blank'>
+        <img class='ooogyimage'  height='600' width='600' src="https://9la.ams3.digitaloceanspaces.com/icons/ooogy/id/108000000000078c000000000000000000000000000000000000000000000e74.png" alt="Ooogy not hatched yet"></img>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js"></script>
+  <script>
+    var image_url_prefix = "https://9la.ams3.digitaloceanspaces.com/icons/ooogy/id/108000000000078c"
+    var enjinx_url_prefix = "https://enjinx.io/eth/asset/0x108000000000078c"
+
+    $("#ooogyinput").keyup(function () {
+      new_ooogyid = parseInt($(this).val()).toString(16)
+      new_ooogyid = new_ooogyid.padStart(48, '0');
+
+      var imagename = image_url_prefix + new_ooogyid + ".png"
+      var keyCode = (event.keyCode ? event.keyCode : event.which);
+      if (keyCode == 13) {
+        $('.ooogyimage').attr('src', imagename);
+        $('#enjinxhref').attr('href', enjinx_url_prefix + new_ooogyid)
+        $("#ooogyinput").attr('value', parseInt($(this).val()))
+        $("#ooogyinput").val(parseInt($(this).val()))
+      }
+    });
+
+    $('.next').click(function () {
+      var ooogyid = $("#ooogyinput").val()
+      new_ooogyid = parseInt(ooogyid) + 1
+      new_ooogyid = new_ooogyid.toString(16)
+      new_ooogyid = new_ooogyid.padStart(48, '0');
+
+      var imagename = image_url_prefix + new_ooogyid + ".png"
+      $('.ooogyimage').attr('src', imagename);
+      $('#ooogyinput').attr('value', parseInt(new_ooogyid, 16));
+      $("#ooogyinput").val(parseInt(new_ooogyid, 16))
+      $('#enjinxhref').attr('href', enjinx_url_prefix + new_ooogyid)
+      ooogyid = parseInt(new_ooogyid, 16)
+    });
+
+    $('.previous').click(function () {
+      var ooogyid = $("#ooogyinput").val()
+      new_ooogyid = parseInt(ooogyid) - 1
+      new_ooogyid = new_ooogyid.toString(16)
+      new_ooogyid = new_ooogyid.padStart(48, '0');
+
+      var imagename = image_url_prefix + new_ooogyid + ".png"
+      $('.ooogyimage').attr('src', imagename);
+      $('#ooogyinput').attr('value', parseInt(new_ooogyid, 16));
+      $("#ooogyinput").val(parseInt(new_ooogyid, 16))
+      $('#enjinxhref').attr('href', enjinx_url_prefix + new_ooogyid)
+      ooogyid = parseInt(new_ooogyid, 16)
+    });
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
